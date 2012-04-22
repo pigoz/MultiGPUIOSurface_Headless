@@ -42,6 +42,7 @@
 		4F6A905C11BC6B5C00ED1E0D /* whale.c in Sources */ = {isa = PBXBuildFile; fileRef = 4F6A905711BC6B5C00ED1E0D /* whale.c */; };
 		4FD5FE9A0E36D37A0048611E /* MultiGPUMig.defs in Sources */ = {isa = PBXBuildFile; fileRef = 4F0A38480DDE41BB0081E0D7 /* MultiGPUMig.defs */; settings = {ATTRIBUTES = (Client, Server, ); }; };
 		4FD5FEC00E36D44F0048611E /* IOSurface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FD5FEBF0E36D44F0048611E /* IOSurface.framework */; };
+		809D53EF15445270009F7A48 /* ServerWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 809D53EE15445270009F7A48 /* ServerWindow.m */; };
 		8D11072A0486CEB800E47090 /* ServerMainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* ServerMainMenu.nib */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
@@ -95,6 +96,8 @@
 		4F6A905711BC6B5C00ED1E0D /* whale.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = whale.c; sourceTree = "<group>"; };
 		4F6A905E11BC6B7F00ED1E0D /* bluepony.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bluepony.c; sourceTree = "<group>"; };
 		4FD5FEBF0E36D44F0048611E /* IOSurface.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOSurface.framework; path = /System/Library/Frameworks/IOSurface.framework; sourceTree = "<absolute>"; };
+		809D53ED15445270009F7A48 /* ServerWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerWindow.h; sourceTree = "<group>"; };
+		809D53EE15445270009F7A48 /* ServerWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerWindow.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* ServerInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ServerInfo.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* MultiGPUServer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiGPUServer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFEC883913F9F9EB0067E60D /* bluepony.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bluepony.h; sourceTree = "<group>"; };
@@ -202,6 +205,8 @@
 		4F0934EA11BEC7C600897344 /* ServerClasses */ = {
 			isa = PBXGroup;
 			children = (
+				809D53ED15445270009F7A48 /* ServerWindow.h */,
+				809D53EE15445270009F7A48 /* ServerWindow.m */,
 				4F0934EB11BEC7E500897344 /* ServerController.h */,
 				4F0934EC11BEC7E500897344 /* ServerController.m */,
 				4F0934ED11BEC7E500897344 /* ServerOpenGLView.h */,
@@ -358,6 +363,7 @@
 				4F6A905C11BC6B5C00ED1E0D /* whale.c in Sources */,
 				4F0934EF11BEC7E500897344 /* ServerController.m in Sources */,
 				4F0934F011BEC7E500897344 /* ServerOpenGLView.m in Sources */,
+				809D53EF15445270009F7A48 /* ServerWindow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

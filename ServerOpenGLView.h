@@ -59,8 +59,7 @@ Copyright (C) 2011 Apple Inc. All Rights Reserved.
 @interface ServerOpenGLView : NSOpenGLView
 {
 	float angle;
-    	GLuint _depthBufferName;
-
+    GLuint _depthBufferName;
 }
 
 - (GLuint)setupIOSurfaceTexture:(IOSurfaceRef)ioSurfaceBuffer;

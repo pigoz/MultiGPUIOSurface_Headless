@@ -101,6 +101,11 @@ BOOL gIsMaster = YES;
 	// Fire up animation timer.
 	_timer = [[NSTimer timerWithTimeInterval:1.0f/60.0f target:self selector:@selector(animate:) userInfo:nil repeats:YES] retain];
 	[[NSRunLoop currentRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
+    
+    NSRect frame = [_window frame];
+    NSRect offScreenRect = {{4000, 4000}, frame.size};
+    [_window setFrame:offScreenRect display:YES];
+    [_window setCollectionBehavior:NSWindowCollectionBehaviorStationary];
 }
 
 - (void)portDied:(NSNotification *)notification

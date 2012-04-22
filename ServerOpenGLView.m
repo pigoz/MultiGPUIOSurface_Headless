@@ -184,49 +184,6 @@ Copyright (C) 2011 Apple Inc. All Rights Reserved.
 	glFlush();	
 }
 
-// Fill the view with the IOSurface backed texture 
-- (void)textureFromCurrentIOSurface
-{
-	NSRect bounds = [self bounds];
-	CGLContextObj cgl_ctx = (CGLContextObj)[[self openGLContext] CGLContextObj];
-
-	// Render quad from our iosurface texture
-	glViewport(0, 0, (GLint)bounds.size.width, (GLint)bounds.size.height);
-	
-	glMatrixMode(GL_PROJECTION);
-	glLoadIdentity();	
-	glOrtho(0.0, (GLfloat)bounds.size.width, 0.0f, (GLfloat)bounds.size.height, -1.0f, 1.0f);
-	
-	glMatrixMode(GL_MODELVIEW);
-	glLoadIdentity();
-	
-	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
-	glClear(GL_COLOR_BUFFER_BIT);
-	
-	glBindTexture(GL_TEXTURE_RECTANGLE_EXT, [[NSApp delegate] currentTextureName]);
-	glEnable(GL_TEXTURE_RECTANGLE_EXT);
-	glTexEnvi(GL_TEXTURE_RECTANGLE_EXT, GL_TEXTURE_ENV_MODE, GL_REPLACE);
-
-	glBegin(GL_QUADS);
-	glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
-	
-	glTexCoord2f(0.0f, 0.0f);
-	glVertex2f(0.0f, 0.0f);
-	
-	glTexCoord2f(512.0f, 0.0f);
-	glVertex2f((GLfloat)bounds.size.width, 0.0f);
-
-	glTexCoord2f(512.0f, 512.0f);
-	glVertex2f((GLfloat)bounds.size.width, (GLfloat)bounds.size.height);
-
-	glTexCoord2f(0.0f, 512.0f);
-	glVertex2f(0.0f, (GLfloat)bounds.size.height);
-	
-	glEnd();
-
-	glDisable(GL_TEXTURE_RECTANGLE_EXT);
-}
-
 - (BOOL)isOpaque
 {
 	return YES;
@@ -241,9 +198,6 @@ Copyright (C) 2011 Apple Inc. All Rights Reserved.
 	glEnable(GL_DEPTH_TEST);
 	[self renderToCurrentIOSurface];
 	glDisable(GL_DEPTH_TEST);
-	[self textureFromCurrentIOSurface];
-	
-	[[self openGLContext] flushBuffer];
 	
 	// This flush is necessary to ensure proper behavior if the MT engine is enabled.
 	glFlush();
